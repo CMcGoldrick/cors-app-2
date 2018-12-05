@@ -1,5 +1,5 @@
-class EventsController < ApplicationController
-  def cors
+class JsonsController < ApplicationController
+  def jsoncors
     require 'net/http'
     require 'openssl'
     require 'json'
@@ -18,9 +18,8 @@ class EventsController < ApplicationController
     data = response.body
     @events = JSON.parse(data)["Data"]
 
-    # render :json => @events
-    render file: "../views/events/index.html.erb"
+    render :json => @events
+
     end 
   end 
- 
 end
