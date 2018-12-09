@@ -16,7 +16,7 @@ class JsonsController < ApplicationController
     response = http.request request # Net::HTTPResponse object
   
     data = response.body
-    @events = JSON.parse(data)["Data"]
+    @events = JSON.parse(data)
 
     render :json => @events
 
